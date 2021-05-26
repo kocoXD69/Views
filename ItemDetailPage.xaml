@@ -24,7 +24,7 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding PName}" Grid.Column="0" TextColor="white" FontSize="28" FontAttributes="None"/>
                             <StackLayout Grid.Column="1">
-                                
+                                <Label Text""/>
                             </StackLayout>
                             
                         </Grid>
