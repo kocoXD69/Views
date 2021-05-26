@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+          
+          
+             x:Class="ProjectMIBA_CS357.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout VerticalOptions="FillAndExpand" >
+                <Grid>
+                    <Frame Padding="0" BackgroundColor="Black" HeightRequest="450">
+                        <Image Opacity="0.7" Source="{Binding Urlphoto}" Aspect="AspectFill"/>
+
+                    </Frame>
+                    <StackLayout VerticalOptions="EndAndExpand" Margin="15,15,15,65">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3"/>
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding PName}" Grid.Column="0" TextColor="white" FontSize="28" FontAttributes="None"/>
+                            <StackLayout Grid.Column="1">
+                                
+                            </StackLayout>
+                            
+                        </Grid>
+                    </StackLayout>
+
+
+                    <Frame CornerRadius="20" VerticalOptions="FillAndExpand" Margin="0,-30,0,0">
+                        
+                        
+                        
+                    </Frame>
+                    
+                    
+                </Grid>
+                
+                
+            </StackLayout>
+        </Grid>
+            
+        
+    </ContentPage.Content>
+
+                   
+                    
+               
+    
+</ContentPage>

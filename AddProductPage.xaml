@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:ProjectMIBA_CS357.Models" xmlns:local="clr-namespace:ProjectMIBA_CS357.ViewModels"
+             x:Class="ProjectMIBA_CS357.Views.AddProductPage"
+             Title="{Binding Title}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <RefreshView x:DataType="local:AddProductPageVM" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Member">
+                            <Label Text="{Binding Listproduct.PName}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                            <Label Text="{Binding Listproduct.DName}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image Source="{Binding Listproduct.Urlphoto}" Aspect="AspectFill" />
+                            </StackLayout>
+                            <Button VerticalOptions="Center" Text="Update" Command="{Binding Source={RelativeSource AncestorType={x:Type local:AddProductPageVM}}, Path=UpdateProduct}" CommandParameter="{Binding .}"	/>
+                            <Button VerticalOptions="Center" Text="Delete" Command="{Binding Source={RelativeSource AncestorType={x:Type local:AddProductPageVM}}, Path=DeleteProduct}" CommandParameter="{Binding .}"/>
+
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

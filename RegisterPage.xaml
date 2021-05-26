@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMIBA_CS357.Views.RegisterPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Register"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Username :" FontSize="Medium" />
+                <Entry Text="{Binding Username, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Password :" FontSize="Medium" />
+                <Entry Text="{Binding Password, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Confirm Password :" FontSize="Medium" />
+                <Entry Text="{Binding CPassword, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Firstname :" FontSize="Medium" />
+                <Entry Text="{Binding Firstname, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Lastname :" FontSize="Medium" />
+                <Entry Text="{Binding Lastname, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Address :" FontSize="Medium" />
+                <Editor Text="{Binding Address, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                <Label Text="Phone :" FontSize="Medium" />
+                <Entry Text="{Binding Phone, Mode=TwoWay}" FontSize="Medium" />
+
+
+                <Button VerticalOptions="Center" Text="Register" Command="{Binding SuccessCommand}"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

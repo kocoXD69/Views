@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectMIBA_CS357.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15">
+                <Label Text="ชื่อสินค้า :" FontSize="Medium" />
+                <Entry Text="{Binding PName, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="รายละเอียดสินค้า :" FontSize="Medium" />
+                <Editor Text="{Binding DName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                <Label Text="ราคา :" FontSize="Medium" />
+                <Entry Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" />
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Padding="0,10,0,0">
+                    <Label Margin="0,0,0,10" Text="Firebase Storage" FontAttributes="Bold"
+                        FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" >
+                    </Label>
+                    
+                    <Image x:Name="imgChoosed" HorizontalOptions="Center" WidthRequest="150" HeightRequest="150"></Image>
+                    <!--
+                    <Entry x:Name="txtFileName" Placeholder="Enter FileName"></Entry>
+                    -->
+                    
+                    
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnPick" WidthRequest="100" Text="Pick"
+                            Clicked="BtnPick_Clicked"/>
+                        
+                        <!--
+                        <Button x:Name="btnTakePhoto" WidthRequest="100" Text="Take Photo"
+                            Clicked="BtnTakePhoto_Clicked"/>
+                        
+                        
+                        
+                        <Button x:Name="btnUpload" WidthRequest="100" Text="Upload"
+                            Clicked="BtnUpload_Clicked" />
+                        -->
+                        
+                    </StackLayout>
+                    
+<!-- 
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnDownload" WidthRequest="200" Text="Download"
+                            Clicked="BtnDownload_Clicked" />
+                        <Button x:Name="btnDelete" WidthRequest="200" Text="Delete"
+                            Clicked="BtnDelete_Clicked" />
+                    </StackLayout>
+-->
+                    <Label x:Name="lblPath"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
